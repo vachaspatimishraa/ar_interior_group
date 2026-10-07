@@ -1,0 +1,696 @@
+{
+  "profile_pdf": "AR INTERIOR GROUP WORK PROFILE.pdf",
+  "projects": {
+    "medanta-lucknow": [
+      {
+        "path": "public/projects/medanta-lucknow/p09-img277.webp",
+        "width": 1206,
+        "height": 570,
+        "bytes": 88676,
+        "page": 9,
+        "pdf_xref": 277,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/medanta-lucknow/p10-img287.webp",
+        "width": 1600,
+        "height": 766,
+        "bytes": 141214,
+        "page": 10,
+        "pdf_xref": 287,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "hcg-aastha-ahmedabad": [
+      {
+        "path": "public/projects/hcg-aastha-ahmedabad/p11-img296.webp",
+        "width": 1046,
+        "height": 494,
+        "bytes": 81612,
+        "page": 11,
+        "pdf_xref": 296,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/hcg-aastha-ahmedabad/p12-img304.webp",
+        "width": 1600,
+        "height": 761,
+        "bytes": 169404,
+        "page": 12,
+        "pdf_xref": 304,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "ltimindtree-hyderabad": [
+      {
+        "path": "public/projects/ltimindtree-hyderabad/p13-img313.webp",
+        "width": 1600,
+        "height": 762,
+        "bytes": 199076,
+        "page": 13,
+        "pdf_xref": 313,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "tata-electronics-tamil-nadu": [
+      {
+        "path": "public/projects/tata-electronics-tamil-nadu/p14-img323.webp",
+        "width": 712,
+        "height": 720,
+        "bytes": 64432,
+        "page": 14,
+        "pdf_xref": 323,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/tata-electronics-tamil-nadu/p14-img327.webp",
+        "width": 948,
+        "height": 960,
+        "bytes": 86066,
+        "page": 14,
+        "pdf_xref": 327,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "ltimindtree-whitefield": [
+      {
+        "path": "public/projects/ltimindtree-whitefield/p15-img339.webp",
+        "width": 1600,
+        "height": 756,
+        "bytes": 98278,
+        "page": 15,
+        "pdf_xref": 339,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "microsoft-bengaluru": [
+      {
+        "path": "public/projects/microsoft-bengaluru/p16-img351.webp",
+        "width": 1153,
+        "height": 1085,
+        "bytes": 98144,
+        "page": 16,
+        "pdf_xref": 351,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/microsoft-bengaluru/p16-img353.webp",
+        "width": 1101,
+        "height": 1035,
+        "bytes": 118626,
+        "page": 16,
+        "pdf_xref": 353,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "highradius-hyderabad": [
+      {
+        "path": "public/projects/highradius-hyderabad/p17-img365.webp",
+        "width": 680,
+        "height": 690,
+        "bytes": 42400,
+        "page": 17,
+        "pdf_xref": 365,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/highradius-hyderabad/p17-img369.webp",
+        "width": 825,
+        "height": 719,
+        "bytes": 72196,
+        "page": 17,
+        "pdf_xref": 369,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "furniture-assembly": [
+      {
+        "path": "public/projects/furniture-assembly/p18-img381.webp",
+        "width": 916,
+        "height": 867,
+        "bytes": 58794,
+        "page": 18,
+        "pdf_xref": 381,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/furniture-assembly/p18-img383.webp",
+        "width": 923,
+        "height": 867,
+        "bytes": 58882,
+        "page": 18,
+        "pdf_xref": 383,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "sahyog-rishikesh": [
+      {
+        "path": "public/projects/sahyog-rishikesh/p19-img394.webp",
+        "width": 1010,
+        "height": 960,
+        "bytes": 42050,
+        "page": 19,
+        "pdf_xref": 394,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sahyog-rishikesh/p19-img398.webp",
+        "width": 1047,
+        "height": 960,
+        "bytes": 61522,
+        "page": 19,
+        "pdf_xref": 398,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sahyog-rishikesh/p20-img408.webp",
+        "width": 999,
+        "height": 960,
+        "bytes": 49722,
+        "page": 20,
+        "pdf_xref": 408,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sahyog-rishikesh/p20-img412.webp",
+        "width": 794,
+        "height": 720,
+        "bytes": 41068,
+        "page": 20,
+        "pdf_xref": 412,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "sequel-logistics": [
+      {
+        "path": "public/projects/sequel-logistics/p21-img421.webp",
+        "width": 960,
+        "height": 916,
+        "bytes": 84596,
+        "page": 21,
+        "pdf_xref": 421,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p21-img425.webp",
+        "width": 960,
+        "height": 885,
+        "bytes": 88534,
+        "page": 21,
+        "pdf_xref": 425,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p22-img437.webp",
+        "width": 1600,
+        "height": 750,
+        "bytes": 143812,
+        "page": 22,
+        "pdf_xref": 437,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p23-img444.webp",
+        "width": 960,
+        "height": 932,
+        "bytes": 93244,
+        "page": 23,
+        "pdf_xref": 444,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p23-img448.webp",
+        "width": 960,
+        "height": 901,
+        "bytes": 84258,
+        "page": 23,
+        "pdf_xref": 448,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p24-img453.webp",
+        "width": 1080,
+        "height": 1043,
+        "bytes": 63424,
+        "page": 24,
+        "pdf_xref": 453,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/sequel-logistics/p24-img457.webp",
+        "width": 1199,
+        "height": 1118,
+        "bytes": 53326,
+        "page": 24,
+        "pdf_xref": 457,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "technip-energies-noida": [
+      {
+        "path": "public/projects/technip-energies-noida/p25-img462.webp",
+        "width": 1163,
+        "height": 1080,
+        "bytes": 84788,
+        "page": 25,
+        "pdf_xref": 462,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p25-img466.webp",
+        "width": 1162,
+        "height": 1080,
+        "bytes": 46484,
+        "page": 25,
+        "pdf_xref": 466,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p26-img478.webp",
+        "width": 1600,
+        "height": 750,
+        "bytes": 85050,
+        "page": 26,
+        "pdf_xref": 478,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p27-img483.webp",
+        "width": 1600,
+        "height": 750,
+        "bytes": 86532,
+        "page": 27,
+        "pdf_xref": 483,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p28-img488.webp",
+        "width": 1600,
+        "height": 776,
+        "bytes": 73182,
+        "page": 28,
+        "pdf_xref": 488,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p29-img495.webp",
+        "width": 1156,
+        "height": 1080,
+        "bytes": 86092,
+        "page": 29,
+        "pdf_xref": 495,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p29-img499.webp",
+        "width": 1600,
+        "height": 750,
+        "bytes": 226024,
+        "page": 29,
+        "pdf_xref": 499,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/technip-energies-noida/p30-img504.webp",
+        "width": 960,
+        "height": 454,
+        "bytes": 57434,
+        "page": 30,
+        "pdf_xref": 504,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "airtel-pune": [
+      {
+        "path": "public/projects/airtel-pune/p31-img511.webp",
+        "width": 780,
+        "height": 712,
+        "bytes": 37528,
+        "page": 31,
+        "pdf_xref": 511,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p31-img515.webp",
+        "width": 720,
+        "height": 676,
+        "bytes": 41878,
+        "page": 31,
+        "pdf_xref": 515,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p32-img525.webp",
+        "width": 890,
+        "height": 899,
+        "bytes": 75110,
+        "page": 32,
+        "pdf_xref": 525,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p33-img532.webp",
+        "width": 1084,
+        "height": 1034,
+        "bytes": 109088,
+        "page": 33,
+        "pdf_xref": 532,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p33-img536.webp",
+        "width": 1080,
+        "height": 1030,
+        "bytes": 81800,
+        "page": 33,
+        "pdf_xref": 536,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p34-img549.webp",
+        "width": 749,
+        "height": 720,
+        "bytes": 78258,
+        "page": 34,
+        "pdf_xref": 549,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p34-img553.webp",
+        "width": 960,
+        "height": 925,
+        "bytes": 61428,
+        "page": 34,
+        "pdf_xref": 553,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p35-img560.webp",
+        "width": 1200,
+        "height": 1162,
+        "bytes": 76030,
+        "page": 35,
+        "pdf_xref": 560,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/airtel-pune/p35-img564.webp",
+        "width": 992,
+        "height": 960,
+        "bytes": 87918,
+        "page": 35,
+        "pdf_xref": 564,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "jcb-jaipur": [
+      {
+        "path": "public/projects/jcb-jaipur/p36-img571.webp",
+        "width": 784,
+        "height": 734,
+        "bytes": 29822,
+        "page": 36,
+        "pdf_xref": 571,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/jcb-jaipur/p36-img575.webp",
+        "width": 894,
+        "height": 734,
+        "bytes": 72766,
+        "page": 36,
+        "pdf_xref": 575,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "pb-health-gurgaon": [
+      {
+        "path": "public/projects/pb-health-gurgaon/p37-img584.webp",
+        "width": 1200,
+        "height": 708,
+        "bytes": 54486,
+        "page": 37,
+        "pdf_xref": 584,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/pb-health-gurgaon/p38-img594.webp",
+        "width": 1481,
+        "height": 957,
+        "bytes": 102406,
+        "page": 38,
+        "pdf_xref": 594,
+        "classification": "project_portfolio_photo"
+      }
+    ],
+    "mv-seals-gurgaon": [
+      {
+        "path": "public/projects/mv-seals-gurgaon/p39-img599.webp",
+        "width": 1280,
+        "height": 796,
+        "bytes": 44180,
+        "page": 39,
+        "pdf_xref": 599,
+        "classification": "project_portfolio_photo"
+      },
+      {
+        "path": "public/projects/mv-seals-gurgaon/p40-img609.webp",
+        "width": 1280,
+        "height": 795,
+        "bytes": 45482,
+        "page": 40,
+        "pdf_xref": 609,
+        "classification": "project_portfolio_photo"
+      }
+    ]
+  },
+  "concept_designs": [
+    {
+      "path": "public/concept-designs/design-p41-img621.webp",
+      "width": 1600,
+      "height": 749,
+      "bytes": 87850,
+      "page": 41,
+      "pdf_xref": 621,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p42-img632.webp",
+      "width": 1083,
+      "height": 1216,
+      "bytes": 84462,
+      "page": 42,
+      "pdf_xref": 632,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p42-img636.webp",
+      "width": 1081,
+      "height": 1216,
+      "bytes": 70978,
+      "page": 42,
+      "pdf_xref": 636,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p43-img649.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 79594,
+      "page": 43,
+      "pdf_xref": 649,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p43-img657.webp",
+      "width": 910,
+      "height": 1024,
+      "bytes": 72790,
+      "page": 43,
+      "pdf_xref": 657,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p44-img662.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 101472,
+      "page": 44,
+      "pdf_xref": 662,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p44-img667.webp",
+      "width": 799,
+      "height": 899,
+      "bytes": 82248,
+      "page": 44,
+      "pdf_xref": 667,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p45-img672.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 95268,
+      "page": 45,
+      "pdf_xref": 672,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p45-img677.webp",
+      "width": 799,
+      "height": 899,
+      "bytes": 109262,
+      "page": 45,
+      "pdf_xref": 677,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p46-img682.webp",
+      "width": 1599,
+      "height": 899,
+      "bytes": 120536,
+      "page": 46,
+      "pdf_xref": 682,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p47-img672.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 95268,
+      "page": 47,
+      "pdf_xref": 672,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p47-img677.webp",
+      "width": 799,
+      "height": 899,
+      "bytes": 109262,
+      "page": 47,
+      "pdf_xref": 677,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p48-img689.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 42460,
+      "page": 48,
+      "pdf_xref": 689,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p48-img694.webp",
+      "width": 1116,
+      "height": 1254,
+      "bytes": 98200,
+      "page": 48,
+      "pdf_xref": 694,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p49-img703.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 87540,
+      "page": 49,
+      "pdf_xref": 703,
+      "classification": "architectural_design_render"
+    },
+    {
+      "path": "public/concept-designs/design-p49-img709.webp",
+      "width": 1173,
+      "height": 1320,
+      "bytes": 99352,
+      "page": 49,
+      "pdf_xref": 709,
+      "classification": "architectural_design_render"
+    }
+  ],
+  "comparison_candidates": [
+    {
+      "slug": "tata-electronics-tamil-nadu",
+      "source_pages": [
+        14,
+        14
+      ],
+      "assets": [
+        "public/projects/tata-electronics-tamil-nadu/p14-img323.webp",
+        "public/projects/tata-electronics-tamil-nadu/p14-img327.webp"
+      ],
+      "review_required": true,
+      "note": "Before and after appear on the same source page; compare perspectives manually"
+    },
+    {
+      "slug": "jcb-jaipur",
+      "source_pages": [
+        36,
+        36
+      ],
+      "assets": [
+        "public/projects/jcb-jaipur/p36-img571.webp",
+        "public/projects/jcb-jaipur/p36-img575.webp"
+      ],
+      "review_required": true,
+      "note": "Before and after appear on the same source page; alignment unverified"
+    },
+    {
+      "slug": "pb-health-gurgaon",
+      "source_pages": [
+        37,
+        38
+      ],
+      "assets": [
+        "public/projects/pb-health-gurgaon/p37-img584.webp",
+        "public/projects/pb-health-gurgaon/p38-img594.webp"
+      ],
+      "review_required": true,
+      "note": "Different photo viewpoints; not ready for a pixel-aligned slider"
+    },
+    {
+      "slug": "mv-seals-gurgaon",
+      "source_pages": [
+        39,
+        40
+      ],
+      "assets": [
+        "public/projects/mv-seals-gurgaon/p39-img599.webp",
+        "public/projects/mv-seals-gurgaon/p40-img609.webp"
+      ],
+      "review_required": true,
+      "note": "Different viewpoints; not ready for a pixel-aligned slider"
+    },
+    {
+      "slug": "ltimindtree-whitefield",
+      "source_pages": [
+        15,
+        15
+      ],
+      "assets": [
+        "public/projects/ltimindtree-whitefield/p15-img339.webp"
+      ],
+      "review_required": true,
+      "note": "One composite page photo; individual before/after pair not proven"
+    }
+  ],
+  "notes": [
+    "Images were extracted from the user-provided work-profile PDF; source page numbers are recorded.",
+    "Embedded PDFs often include composite pictures and images showing people: review privacy, licenses, and client/publication permissions.",
+    "No extracted photograph is reclassified as a different project. Unverified claims and precise before/after alignment are not inferred.",
+    "Architectural 3D design renders are labeled separately from on-site photography."
+  ],
+  "excluded_publication": [
+    {
+      "source_path": "public/projects/airtel-pune/p32-img527.webp",
+      "source_thumbnail": "public/projects/airtel-pune/p32-img527-thumb.webp",
+      "page": 32,
+      "pdf_xref": 527,
+      "classification": "project_portfolio_photo",
+      "status": "excluded_from_publication",
+      "reason": "Removed at the user's request: identifiable worker in orange high-visibility vest and yellow hard hat. Original source remains in the authoritative profile PDF."
+    }
+  ]
+}

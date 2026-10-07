@@ -1,0 +1,48 @@
+{
+  "type": "prerendered-2.5d-design-to-render",
+  "claim": "Conceptual architectural design visualization, not a physical construction timelapse or completed client project photograph.",
+  "stages": [
+    {
+      "start": 0,
+      "end": 0.24,
+      "label": "The Vision",
+      "effect": "architectural contour drawing"
+    },
+    {
+      "start": 0.24,
+      "end": 0.55,
+      "label": "Planning the Details",
+      "effect": "monochrome material visualization"
+    },
+    {
+      "start": 0.55,
+      "end": 0.82,
+      "label": "Design in Motion",
+      "effect": "finished render material reveal"
+    },
+    {
+      "start": 0.82,
+      "end": 1,
+      "label": "Space Reimagined",
+      "effect": "completed conceptual design visualization"
+    }
+  ],
+  "desktop": {
+    "count": 96,
+    "width": 1280,
+    "height": 720,
+    "first": "/cinematic/desktop/frame-0001.webp",
+    "folder": "/cinematic/desktop/",
+    "poster": "/cinematic/poster-desktop.webp",
+    "bytes": 5909996
+  },
+  "mobile": {
+    "count": 60,
+    "width": 720,
+    "height": 1280,
+    "first": "/cinematic/mobile/frame-0001.webp",
+    "folder": "/cinematic/mobile/",
+    "poster": "/cinematic/poster-mobile.webp",
+    "bytes": 2295806
+  }
+}

@@ -31,7 +31,14 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
+.env
+.env.local
+.env.*.local
 .env*
+!.env.example
+
+# Private company source documents are reference-only and must not enter Git.
+/reference/*.pdf
 
 # vercel
 .vercel
@@ -39,3 +46,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local browser and render outputs (keep reproducible source scripts tracked).
+/test-results/
+/playwright-report/
+/production/**/renders/
+*.blend1
+/tmp/
+/package-lock.wsl-backup.json

@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Before",
+    "path": "public/projects/ltimindtree-whitefield/p15-before.webp",
+    "sourcePage": 15,
+    "sourceImage": "embedded composite X77.jpg",
+    "width": 1080,
+    "height": 1021,
+    "bytes": 61608
+  },
+  {
+    "label": "After",
+    "path": "public/projects/ltimindtree-whitefield/p15-after.webp",
+    "sourcePage": 15,
+    "sourceImage": "embedded composite X77.jpg",
+    "width": 1080,
+    "height": 1021,
+    "bytes": 136092
+  }
+]

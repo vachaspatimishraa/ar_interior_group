@@ -1,0 +1,48 @@
+[
+  {
+    "project": "Tata Electronics Private Limited",
+    "slug": "tata-electronics-tamil-nadu",
+    "location": "Hosur, Tamil Nadu",
+    "before": { "path": "public/projects/tata-electronics-tamil-nadu/p14-img323.webp", "sourcePages": [14], "label": "Before" },
+    "after": { "path": "public/projects/tata-electronics-tamil-nadu/p14-img327.webp", "sourcePages": [14], "label": "After" },
+    "viewpointsAligned": false,
+    "publicationApproval": "unconfirmed"
+  },
+  {
+    "project": "LTIMindtree",
+    "slug": "ltimindtree-whitefield",
+    "location": "Whitefield, Bengaluru",
+    "before": { "path": "public/projects/ltimindtree-whitefield/p15-before.webp", "sourcePages": [15], "label": "Before" },
+    "after": { "path": "public/projects/ltimindtree-whitefield/p15-after.webp", "sourcePages": [15], "label": "After" },
+    "viewpointsAligned": false,
+    "publicationApproval": "unconfirmed",
+    "note": "Cropped left and right photo panels from one source-labeled composite; original crop script and source image are documented in production/phase-07-2/extract_pdf_assets.py."
+  },
+  {
+    "project": "JCB",
+    "slug": "jcb-jaipur",
+    "location": "Jaipur",
+    "before": { "path": "public/projects/jcb-jaipur/p36-img571.webp", "sourcePages": [36], "label": "Before" },
+    "after": { "path": "public/projects/jcb-jaipur/p36-img575.webp", "sourcePages": [36], "label": "After" },
+    "viewpointsAligned": false,
+    "publicationApproval": "unconfirmed"
+  },
+  {
+    "project": "PB Health",
+    "slug": "pb-health-gurgaon",
+    "location": "Gurgaon",
+    "before": { "path": "public/projects/pb-health-gurgaon/p37-img584.webp", "sourcePages": [37], "label": "Before" },
+    "after": { "path": "public/projects/pb-health-gurgaon/p38-img594.webp", "sourcePages": [38], "label": "After" },
+    "viewpointsAligned": false,
+    "publicationApproval": "unconfirmed"
+  },
+  {
+    "project": "MV Seals",
+    "slug": "mv-seals-gurgaon",
+    "location": "Gurgaon",
+    "before": { "path": "public/projects/mv-seals-gurgaon/p39-img599.webp", "sourcePages": [39], "label": "Before" },
+    "after": { "path": "public/projects/mv-seals-gurgaon/p40-img609.webp", "sourcePages": [40], "label": "After" },
+    "viewpointsAligned": false,
+    "publicationApproval": "unconfirmed"
+  }
+]

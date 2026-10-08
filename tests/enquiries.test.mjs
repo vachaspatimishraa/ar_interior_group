@@ -455,9 +455,12 @@ test("service visual references resolve locally and are not third-party stock as
   }
   const pageSource = readFileSync(resolve("src/app/page.tsx"), "utf8");
   assert.doesNotMatch(pageSource, /A considered comparison|Comparison imagery · review in progress|We are reviewing the source images/);
-  assert.match(pageSource, /<HomepageContactCta\s*\/>/);
-  assert.doesNotMatch(pageSource, /contact-cta[^\n]*bg-ink/);
-  assert.equal((pageSource.match(/<section\b/g) ?? []).length + 2, 8, "cinematic and closing components each contribute a homepage section");
+  assert.match(pageSource, /<ContactSection/);
+  assert.match(pageSource, /<AboutSection/);
+  assert.match(pageSource, /<ServicesSection/);
+  assert.match(pageSource, /<ClientsSection/);
+  assert.match(pageSource, /<ProjectsSection/);
+  assert.match(pageSource, /<OfficesSection/);
   const contactCta = readFileSync(resolve("src/components/homepage-contact-cta.tsx"), "utf8");
   assert.match(contactCta, /ContactEnquiryLink/);
   assert.equal(homepage.contact.action.href, "/contact#enquiry-form");

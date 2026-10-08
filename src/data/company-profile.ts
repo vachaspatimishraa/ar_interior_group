@@ -121,7 +121,7 @@ export const companyAboutProfile = {
 } as const;
 
 export const clientNames = [
-  "Google", "Compass Group", "Myntra", "Nxtra by Airtel", "HighRadius", "Sequel", "iQor", "ST Telemedia Global Data Centres", "TechnipFMC", "IIM Lucknow", "Maier Vidorno", "Maersk", "GBU", "IILM", "UFlex", "Medtronic", "Vodafone", "Tata Steel", "Siemens Healthineers", "SmartQ", "Pronto", "ICS Foods", "EXL", "OCS", "Shadowfax", "Technip Energies", "Coforge", "NSL", "Rivigo", "Defsys Integrated Systems", "Sahyog", "PB Health", "HCG Aastha Oncology", "Narayana Health", "Medanta", "Fortis", "Niwas Housing Finance", "MV Seals",
+  "Google", "Compass Group", "Myntra", "Nxtra by Airtel", "HighRadius", "Sequel", "iQor", "ST Telemedia Global Data Centres", "TechnipFMC", "IIM Lucknow", "Maier Vidorno", "Maersk", "GBU", "IILM", "UFlex", "Medtronic", "Vodafone", "Tata Steel", "Siemens Healthineers", "SmartQ", "Pronto", "ICS Foods", "EXL", "OCS", "Shadowfax", "Technip Energies", "Coforge", "NSL", "Rivigo", "Defsys Integrated Systems", "Sahyog", "PB Health", "HCG Aastha Oncology", "Narayana Health", "Medanta", "Fortis", "Niwas Housing Finance",
 ];
 
 export const contact = {

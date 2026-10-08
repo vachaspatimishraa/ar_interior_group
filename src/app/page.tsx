@@ -1,80 +1,47 @@
-import Link from "next/link";
-import { HomepagePortfolioImage } from "@/components/homepage-portfolio-image";
 import { CinematicPlaceholder } from "@/components/cinematic-placeholder";
-import { ClientLogoWall } from "@/components/client-logo-wall";
-import { HomepageCqet } from "@/components/homepage-cqet";
-import { HomepageContactCta } from "@/components/homepage-contact-cta";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { HomepageProjectGallery } from "@/components/homepage-project-gallery";
-import { HomepageServiceShowcase } from "@/components/homepage-service-showcase";
-import { ProjectTransformations } from "@/components/project-transformations";
-import { ImageReveal, RevealItem, SectionReveal, StaggerGroup } from "@/lib/motion/reveal-attributes";
-import { projects } from "@/data/company-profile";
-import { homepage } from "@/data/homepage";
-import { homepageAboutImage, homepagePrinciplesImage, homepageServices } from "@/data/homepage-projects";
+import { AboutSection } from "@/components/about-section";
+import { ServicesSection } from "@/components/services-section";
+import { ClientsSection } from "@/components/clients-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { OngoingProjectsSection } from "@/components/ongoing-projects-section";
+import { OfficesSection } from "@/components/offices-section";
+import { ContactSection } from "@/components/contact-section";
+import { getEnquiryConfig } from "@/lib/enquiries/config";
 import "./homepage.css";
 
 export default function Home() {
+  const onlineEnquiryAvailable = getEnquiryConfig() !== null;
+
   return (
-    <main id="main-content" className="homepage">
+    <main id="main-content" className="homepage single-page-portfolio">
       <ScrollReveal scope="homepage" />
-      <CinematicPlaceholder />
 
-      <section id="homepage-content" className="home-section home-about" aria-labelledby="home-about-title" {...SectionReveal()}>
-        <div className="home-shell home-about-grid">
-          <figure className="home-about-figure" {...ImageReveal()}>
-            <div className="home-about-image"><HomepagePortfolioImage image={homepageAboutImage} sizes="(max-width: 767px) 92vw, 54vw" /></div>
-            <figcaption>{homepageAboutImage.caption}</figcaption>
-          </figure>
-          <div className="home-about-copy" {...StaggerGroup()}>
-            <p className="eyebrow text-gold-ink" {...RevealItem({ kind: "eyebrow" })}>{homepage.about.eyebrow}</p>
-            <h2 className="home-title" id="home-about-title" {...RevealItem({ kind: "heading" })}>{homepage.about.title}</h2>
-            <p className="home-description home-about-description" {...RevealItem({ kind: "copy" })}>{homepage.about.description}</p>
-            <Link className="link-arrow" href={homepage.about.action.href} {...RevealItem({ kind: "control" })}>{homepage.about.action.label} <span aria-hidden="true">↗</span></Link>
-          </div>
-        </div>
-      </section>
+      {/* Section 1 — Home (Cinematic 2.5D Introduction) */}
+      <div id="home">
+        <CinematicPlaceholder />
+      </div>
 
-      <section className="home-section home-services" aria-labelledby="home-services-title" {...SectionReveal()}>
-        <div className="home-shell">
-          <div className="home-section-heading">
-            <div {...StaggerGroup()}><p className="eyebrow text-gold-ink" {...RevealItem({ kind: "eyebrow" })}>{homepage.services.eyebrow}</p><h2 className="home-title" id="home-services-title" {...RevealItem({ kind: "heading" })}>{homepage.services.title}</h2></div>
-            <p className="home-description" {...RevealItem({ kind: "copy" })}>{homepage.services.description}</p>
-          </div>
-          <HomepageServiceShowcase items={homepageServices} />
-        </div>
-      </section>
+      {/* Section 2 — About (Story, Mission, CQET, Team, Presence) */}
+      <AboutSection />
 
-      <section className="home-section home-projects" aria-labelledby="home-projects-title" {...SectionReveal()}>
-        <div className="home-shell">
-          <div className="home-section-heading">
-            <div {...StaggerGroup()}><p className="eyebrow text-gold-ink" {...RevealItem({ kind: "eyebrow" })}>{homepage.projects.eyebrow}</p><h2 className="home-title" id="home-projects-title" {...RevealItem({ kind: "heading" })}>{homepage.projects.title}</h2></div>
-            {homepage.projects.description && <p className="home-description" {...RevealItem({ kind: "copy" })}>{homepage.projects.description}</p>}
-          </div>
-          <HomepageProjectGallery />
-        </div>
-      </section>
+      {/* Section 3 — Services (All 7 Documented Categories & Preview Selection) */}
+      <ServicesSection />
 
-      <section className="home-section home-transformations" aria-labelledby="home-transformations-title" {...SectionReveal()}>
-        <div className="home-shell"><ProjectTransformations items={projects} /></div>
-      </section>
+      {/* Section 4 — Clients (35+ Verified Client Logos & Micro-Market References) */}
+      <ClientsSection />
 
-      <section className="home-section home-principles" aria-labelledby="home-principles-title" {...SectionReveal()}>
-        <div className="home-shell"><HomepageCqet image={homepagePrinciplesImage} /></div>
-      </section>
+      {/* Section 5 — Projects (Documented Portfolio, 5 Before/After Pairs, 3D Concepts) */}
+      <ProjectsSection />
 
-      <section className="home-section home-clients client-proof-section" aria-labelledby="home-clients-title" {...SectionReveal()}>
-        <div className="home-shell">
-          <div className="home-section-heading">
-            <div {...StaggerGroup()}>{homepage.clients.eyebrow && <p className="eyebrow text-gold-ink" {...RevealItem({ kind: "eyebrow" })}>{homepage.clients.eyebrow}</p>}<h2 className="home-title" id="home-clients-title" {...RevealItem({ kind: "heading" })}>{homepage.clients.title}</h2></div>
-            <div className="home-heading-side" {...StaggerGroup()}>{homepage.clients.description && <p className="home-description" {...RevealItem({ kind: "copy" })}>{homepage.clients.description}</p>}<Link className="link-arrow" href={homepage.clients.action.href} {...RevealItem({ kind: "control" })}>{homepage.clients.action.label} <span aria-hidden="true">↗</span></Link></div>
-          </div>
-          <ClientLogoWall compact reveal />
-          {homepage.clients.note && <p className="home-clients-note" {...RevealItem({ kind: "copy" })}>{homepage.clients.note}</p>}
-        </div>
-      </section>
+      {/* Section 6 — Ongoing Projects (Unpublished until verified data provided) */}
+      <OngoingProjectsSection />
 
-      <HomepageContactCta />
+      {/* Section 7 — Both Offices (Two Office Entries & Presence Footprint) */}
+      <OfficesSection />
+
+      {/* Section 8 — Availability & Contact (Acceptance Notice & Secure Enquiry Form) */}
+      <ContactSection onlineEnquiryAvailable={onlineEnquiryAvailable} />
     </main>
   );
 }

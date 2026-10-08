@@ -69,7 +69,15 @@ test("Home and About preserve their editorial section order without slide lockin
   const homeStyles = readFileSync(resolve("src/app/homepage.css"), "utf8");
   const aboutStyles = readFileSync(resolve("src/app/about/about.css"), "utf8");
   const revealStyles = readFileSync(resolve("src/styles/scroll-motion.css"), "utf8");
-  const homeSequence = ["<CinematicPlaceholder", "className=\"home-section home-about", "className=\"home-section home-services", "className=\"home-section home-projects", "className=\"home-section home-transformations", "className=\"home-section home-principles", "className=\"home-section home-clients", "<HomepageContactCta"];
+  const homeSequence = [
+    "<CinematicPlaceholder",
+    "<AboutSection",
+    "<ServicesSection",
+    "<ClientsSection",
+    "<ProjectsSection",
+    "<OfficesSection",
+    "<ContactSection",
+  ];
   let previousHomeIndex = -1;
   for (const marker of homeSequence) {
     const currentIndex = home.indexOf(marker);

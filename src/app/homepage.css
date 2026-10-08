@@ -12,6 +12,16 @@ body:has(> main.homepage) > .skip-to-main:not(:focus-visible) {
 
 .homepage .home-section {
   padding: var(--home-section-space) var(--theme-page-gutter);
+  scroll-margin-top: 6rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
 }
 
 .homepage .home-shell {
@@ -188,9 +198,125 @@ body:has(> main.homepage) > .skip-to-main:not(:focus-visible) {
 .homepage .cqet-disclosure { margin-top: 0.8rem; color: var(--theme-text-muted); font-size: 0.72rem; line-height: 1.6; }
 
 .homepage .home-heading-side { display: grid; gap: 1rem; justify-items: start; }
-.homepage .client-logo-wall-compact { margin-top: 0; }
-.homepage .client-logo-row { mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent); }
 .homepage .home-clients-note { max-width: 42rem; margin-top: 1.3rem; color: var(--theme-text-muted); font-size: 0.68rem; line-height: 1.6; }
+
+/* Client Logo Matrix (37 verified clients: 2 col mobile, 3 col tablet, 4 col desktop, 5 col large desktop) */
+.clients-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.clients-logo-item {
+  display: flex;
+  min-width: 0;
+  min-height: 7.25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--theme-border, rgba(28, 28, 28, 0.1));
+  border-radius: var(--theme-radius-card, 16px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  transition: transform var(--theme-transition-medium, 220ms) var(--theme-ease, ease),
+              border-color var(--theme-transition-medium, 220ms) ease,
+              background-color var(--theme-transition-medium, 220ms) ease,
+              box-shadow var(--theme-transition-medium, 220ms) ease;
+}
+
+.clients-logo-item:hover {
+  background: #ffffff;
+  border-color: var(--theme-gold, #c49a52);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(28, 28, 28, 0.08);
+}
+
+.clients-logo-mark {
+  display: grid;
+  width: 100%;
+  min-height: 2.75rem;
+  place-items: center;
+}
+
+.clients-logo-mark img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 8.5rem);
+  height: auto;
+  max-height: 2.65rem;
+  object-fit: contain;
+  transition: transform var(--theme-transition-medium, 220ms) var(--theme-ease, ease);
+}
+
+.clients-logo-item:hover .clients-logo-mark img,
+.clients-logo-item:focus-within .clients-logo-mark img {
+  transform: scale(1.035);
+}
+
+.clients-logo-name {
+  color: var(--theme-text-muted, #696866);
+  font-family: var(--theme-font-ui);
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Tasteful text-only cards for verified clients without image logos (IIM Lucknow, GBU) */
+.clients-logo-item-text-only {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: color-mix(in srgb, var(--theme-gold) 35%, var(--theme-border));
+}
+
+.clients-logo-item-text-only .clients-text-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.75rem;
+  background: var(--theme-surface-muted, #eeeae2);
+  border: 1px solid var(--theme-border);
+  border-radius: 6px;
+  color: var(--theme-ink, #1c1c1c);
+  font-family: var(--theme-font-display);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.clients-logo-item-text-only .clients-logo-name {
+  color: var(--theme-gold-ink, #6e551f);
+  font-weight: 600;
+}
 
 .homepage .home-contact { border-top: 1px solid var(--theme-border); }
 .homepage .home-contact-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: var(--home-grid-gap); }

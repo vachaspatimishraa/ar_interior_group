@@ -18,9 +18,23 @@ export function ClientLogoCollection({ names }: { names: readonly string[] }) {
         return (
           <li className={"clients-logo-item" + (logo ? "" : " clients-logo-item-text-only")} key={name} {...RevealItem({ kind: "card", delayMs: 700 })}>
             <div className="clients-logo-mark">
-              {logo ? <Image src={logo.image} alt="" width={logo.width} height={logo.height} sizes="(max-width: 639px) 36vw, (max-width: 1023px) 25vw, 16vw" loading="lazy" /> : <span aria-hidden="true">{name}</span>}
+              {logo ? (
+                <Image
+                  src={logo.image}
+                  alt=""
+                  width={logo.width}
+                  height={logo.height}
+                  sizes="(max-width: 639px) 36vw, (max-width: 1023px) 25vw, 16vw"
+                  loading="lazy"
+                  style={{ width: "auto", height: "auto" }}
+                />
+              ) : (
+                <span className="clients-text-badge" aria-hidden="true">
+                  {name === "IIM Lucknow" ? "IIML" : name}
+                </span>
+              )}
             </div>
-            <span className="clients-logo-name">{name}</span>
+            <span className="clients-logo-name">{name === "GBU" ? "GBU (Gautam Buddha University)" : name}</span>
           </li>
         );
       })}

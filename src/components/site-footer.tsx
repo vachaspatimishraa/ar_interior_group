@@ -1,88 +1,34 @@
-import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ContactEnquiryLink } from "@/components/contact-enquiry-link";
-import { SiteBrand } from "@/components/site-brand";
 import { companyAboutProfile, contact } from "@/data/company-profile";
 
-const footerNavigation = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
-  { href: "/clients", label: "Clients" },
-  { href: "/contact", label: "Contact" },
-] as const;
-
-const footerSocials = [
-  { href: contact.linkedin, label: "LinkedIn" },
-  { href: contact.instagram, label: "Instagram" },
-  { href: contact.googleBusiness, label: "Google Business" },
+const footerContactCards = [
+  { label: "Email", value: contact.email, action: "Send Email", href: `mailto:${contact.email}`, icon: "✉", external: false },
+  { label: "Phone", value: contact.phone, action: "Call Now", href: contact.phoneHref, icon: "⌕", external: false },
+  { label: "LinkedIn", value: "AR Interior Group", action: "View Profile", href: contact.linkedin, icon: "in", external: true },
+  { label: "Instagram", value: "A R Interior Group", action: "Connect", href: contact.instagram, icon: "◎", external: true },
+  { label: "Google Business", value: "AR Interior Group", action: "View Profile", href: contact.googleBusiness, icon: "G", external: true },
 ] as const;
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="site-footer" aria-label="AR Interior Group site footer" data-site-footer>
       <div className="site-footer-shell">
-        <div className="site-footer-layout">
-          <div className="site-footer-identity">
-            <div className="site-footer-brand" data-footer-reveal style={{ "--footer-reveal-delay": "0ms" } as CSSProperties}>
-              <SiteBrand variant="footer" />
-            </div>
-            <p className="site-footer-positioning" data-footer-reveal style={{ "--footer-reveal-delay": "120ms" } as CSSProperties}>
-              {companyAboutProfile.positioning}
-            </p>
-            <p className="site-footer-tagline" data-footer-reveal style={{ "--footer-reveal-delay": "220ms" } as CSSProperties}>
-              {companyAboutProfile.tagline}
-            </p>
+        <section id="footer-connect" className="site-footer-connect" aria-labelledby="footer-connect-title">
+          <ContactEnquiryLink className="site-footer-kicker" data-footer-reveal style={{ "--footer-reveal-delay": "0ms" } as CSSProperties}>Get in touch</ContactEnquiryLink>
+          <h2 id="footer-connect-title" data-footer-reveal style={{ "--footer-reveal-delay": "100ms" } as CSSProperties}>Let&apos;s plan &amp; build your next space.</h2>
+          <p className="site-footer-intro" data-footer-reveal style={{ "--footer-reveal-delay": "180ms" } as CSSProperties}>{companyAboutProfile.positioning} Share the location, intended use and priorities to start a conversation about your brief.</p>
+          <div className="site-footer-contact-grid">
+            {footerContactCards.map((card, index) => (
+              <article className="site-footer-contact-card" key={card.label} data-footer-reveal style={{ "--footer-reveal-delay": `${280 + index * 80}ms` } as CSSProperties}>
+                <span className="site-footer-card-icon" aria-hidden="true">{card.icon}</span>
+                <div className="site-footer-card-content"><span className="site-footer-card-label">{card.label}</span><strong>{card.value}</strong></div>
+                <a className="site-footer-card-action" href={card.href} target={card.external ? "_blank" : undefined} rel={card.external ? "noreferrer" : undefined}>{card.action} <span aria-hidden="true">↗</span></a>
+              </article>
+            ))}
           </div>
+        </section>
 
-          <nav className="site-footer-navigation" aria-label="Footer navigation">
-            <p className="site-footer-label" data-footer-reveal style={{ "--footer-reveal-delay": "300ms" } as CSSProperties}>Explore</p>
-            <ul>
-              {footerNavigation.map(({ href, label }, index) => (
-                <li key={href} data-footer-reveal style={{ "--footer-reveal-delay": `${360 + index * 55}ms` } as CSSProperties}>
-                  <Link href={href} className="site-footer-link">{label}<span aria-hidden="true">↗</span></Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <address className="site-footer-contact">
-            <p className="site-footer-label" data-footer-reveal style={{ "--footer-reveal-delay": "560ms" } as CSSProperties}>Contact</p>
-            <a className="site-footer-contact-link" href={contact.phoneHref} data-footer-reveal style={{ "--footer-reveal-delay": "620ms" } as CSSProperties}>{contact.phone}</a>
-            <a className="site-footer-contact-link site-footer-email" href={`mailto:${contact.email}`} data-footer-reveal style={{ "--footer-reveal-delay": "680ms" } as CSSProperties}>{contact.email}</a>
-            <nav className="site-footer-socials" aria-label="AR Interior Group external links">
-              {footerSocials.map(({ href, label }, index) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`AR Interior Group on ${label} (opens in a new tab)`}
-                  className="site-footer-social"
-                  data-footer-reveal
-                  style={{ "--footer-reveal-delay": `${740 + index * 55}ms` } as CSSProperties}
-                >
-                  {label}<span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </nav>
-          </address>
-
-          <div className="site-footer-cta">
-            <p data-footer-reveal style={{ "--footer-reveal-delay": "850ms" } as CSSProperties}>Have a space in mind?</p>
-            <ContactEnquiryLink className="site-footer-cta-link" data-footer-reveal style={{ "--footer-reveal-delay": "920ms" } as CSSProperties}>
-              Discuss Your Space <span aria-hidden="true">→</span>
-            </ContactEnquiryLink>
-          </div>
-
-          <div className="site-footer-meta" data-footer-reveal style={{ "--footer-reveal-delay": "1050ms" } as CSSProperties}>
-            <span>© {year} AR Interior Group</span>
-            <a href="#" className="site-footer-top">Back to top <span aria-hidden="true">↑</span></a>
-          </div>
-        </div>
       </div>
     </footer>
   );

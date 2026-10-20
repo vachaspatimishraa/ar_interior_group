@@ -21,6 +21,34 @@
   background: var(--theme-ink);
 }
 
+.sticky::before,
+.sticky::after {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.sticky::before {
+  inset: 0;
+  background-image: linear-gradient(color-mix(in srgb, var(--theme-gold) 22%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--theme-gold) 22%, transparent) 1px, transparent 1px);
+  background-position: center;
+  background-size: 5rem 5rem;
+  mask-image: linear-gradient(90deg, black, transparent 82%);
+  opacity: 0.12;
+}
+
+.sticky::after {
+  top: -15rem;
+  right: -12rem;
+  width: 48rem;
+  height: 48rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-gold) 26%, transparent), transparent 64%);
+  filter: blur(10px);
+  opacity: 0.42;
+}
+
 .sticky picture {
   position: absolute;
   inset: 0;
@@ -215,6 +243,14 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .sticky::before {
+    animation: hero-grid-drift 22s linear infinite;
+  }
+
+  .sticky::after {
+    animation: hero-glow-pulse 9s ease-in-out infinite alternate;
+  }
+
   .eyebrow,
   .text h1,
   .stage,
@@ -234,10 +270,22 @@
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  @keyframes hero-grid-drift {
+    from { background-position: center; }
+    to { background-position: 5rem 2.5rem; }
+  }
+
+  @keyframes hero-glow-pulse {
+    from { opacity: 0.24; transform: scale(0.98); }
+    to { opacity: 0.5; transform: scale(1.04); }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .canvas { transition: none; }
+  .sticky::before,
+  .sticky::after { animation: none; }
   .sequence {
     height: min(82svh, 920px);
     min-height: 520px;

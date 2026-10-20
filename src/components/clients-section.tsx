@@ -27,7 +27,7 @@ export function ClientsSection() {
           </div>
           <div className="flex flex-col justify-end" {...RevealItem({ kind: "copy", delayMs: 580 })}>
             <p className="text-sm sm:text-base leading-relaxed text-ink/75 max-w-xl">
-              From global technology enterprises to premier healthcare facilities and financial institutions, our portfolio represents verified execution for esteemed organizations across India.
+              The work profile records organizations across technology, healthcare, finance, education, logistics, and workplace services. The names below are shown as documented portfolio references, not as endorsements.
             </p>
           </div>
         </div>

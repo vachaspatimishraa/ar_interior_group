@@ -63,20 +63,19 @@ test("custom page reveal scopes do not run through the generic section observer"
 });
 
 test("Home and About preserve their editorial section order without slide locking", () => {
-  const home = readFileSync(resolve("src/app/page.tsx"), "utf8");
+  const home = readFileSync(resolve("src/components/ar-portfolio-page.tsx"), "utf8");
   const about = readFileSync(resolve("src/app/about/page.tsx"), "utf8");
-  const homeCopy = readFileSync(resolve("src/data/homepage.ts"), "utf8");
-  const homeStyles = readFileSync(resolve("src/app/homepage.css"), "utf8");
+  const homeStyles = readFileSync(resolve("src/app/ar-portfolio.css"), "utf8");
   const aboutStyles = readFileSync(resolve("src/app/about/about.css"), "utf8");
   const revealStyles = readFileSync(resolve("src/styles/scroll-motion.css"), "utf8");
   const homeSequence = [
-    "<CinematicPlaceholder",
-    "<AboutSection",
-    "<ServicesSection",
-    "<ClientsSection",
-    "<ProjectsSection",
-    "<OfficesSection",
-    "<ContactSection",
+    'id="home"',
+    'id="about"',
+    'id="services"',
+    'id="projects"',
+    'id="clients"',
+    'id="presence"',
+    'id="contact"',
   ];
   let previousHomeIndex = -1;
   for (const marker of homeSequence) {
@@ -84,8 +83,8 @@ test("Home and About preserve their editorial section order without slide lockin
     assert.ok(currentIndex > previousHomeIndex, `homepage order contains ${marker}`);
     previousHomeIndex = currentIndex;
   }
-  for (const heading of ["One space. Many disciplines.", "Spaces with a story to tell.", "From site to finished space", "Success Mantra “C.Q.E.T”"]) {
-    assert.ok(homeCopy.includes(heading), `homepage content includes ${heading}`);
+  for (const heading of ["One space.", "Spaces made", "Built around", "Local execution."]) {
+    assert.ok(home.includes(heading), `homepage content includes ${heading}`);
   }
   const aboutSequence = ["about-hero-title", "about-story-title", "about-capabilities-title", "about-process-title", "about-principles-title", "about-projects-title", "about-contact-title"];
   let previousAboutIndex = -1;
@@ -97,7 +96,7 @@ test("Home and About preserve their editorial section order without slide lockin
   assert.doesNotMatch(`${homeStyles}\n${aboutStyles}`, /scroll-snap|height:\s*100vh|min-height:\s*100vh/);
   assert.doesNotMatch(revealStyles, /data-scroll-section[^\n]*::before|::before[^\n]*data-scroll-section/);
   assert.doesNotMatch(revealStyles, /data-scroll-section\]\[data-scroll-state/);
-  assert.doesNotMatch(homeStyles, /min-height:\s*74svh/);
+  assert.doesNotMatch(homeStyles, /scroll-snap|height:\s*100vh|min-height:\s*100vh/);
   assert.match(readFileSync(resolve("src/components/scroll-reveal.tsx"), "utf8"), /addEventListener\("scroll", scheduleScrollCheck/);
 });
 
@@ -127,11 +126,14 @@ test("one canonical footer uses verified profile data and is staged through the 
   const styles = readFileSync(resolve("src/styles/site-footer.css"), "utf8");
   assert.equal((layout.match(/<SiteFooter\s*\/>/g) ?? []).length, 1);
   assert.match(footer, /companyAboutProfile, contact/);
-  assert.match(footer, /href=\{contact\.phoneHref\}/);
+  assert.match(footer, /contact\.phoneHref/);
   assert.match(footer, /mailto:\$\{contact\.email\}/);
   assert.match(footer, /\/contact/);
-  assert.match(footer, /target="_blank"\s+rel="noreferrer"/);
-  assert.match(footer, /Back to top/);
+  assert.match(footer, /target=.*_blank/);
+  assert.match(footer, /noreferrer/);
+  assert.match(footer, /id="footer-connect"/);
+  assert.match(footer, /contact\.googleBusiness/);
+  assert.doesNotMatch(footer, /site-footer-bottom|Back to top/);
   assert.doesNotMatch(footer, /facilities@arinteriorgroup\.com|\+91 7678495036|Spaces that stay with you/);
   assert.match(observer, /footer\[data-site-footer\]/);
   assert.match(observer, /footerRevealState = "visible"/);

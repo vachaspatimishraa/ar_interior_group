@@ -36,7 +36,7 @@ export function ServicesSection() {
           </div>
           <div className="flex flex-col justify-end" {...RevealItem({ kind: "copy", delayMs: 580 })}>
             <p className="text-sm sm:text-base leading-relaxed text-ink/75 max-w-xl">
-              From modular micro-markets and civil structures to bespoke partitions, flooring, and MEP works, AR Interior Group provides turnkey execution across seven specialized domains.
+              From space planning and design-build to micro-markets, civil services, partitions, furniture, flooring, plumbing, and railing work, AR Interior Group brings the documented disciplines together around each brief.
             </p>
           </div>
         </div>

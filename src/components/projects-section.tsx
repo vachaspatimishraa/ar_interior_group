@@ -96,7 +96,7 @@ export function ProjectsSection() {
               {filteredProjects.map((project, idx) => {
                 const hasImages = project.images.length > 0;
                 const isExpanded = expandedSlug === project.slug;
-                const primaryImage = project.images[0];
+                const primaryImage = project.comparison?.after ?? project.images[0];
 
                 return (
                   <article

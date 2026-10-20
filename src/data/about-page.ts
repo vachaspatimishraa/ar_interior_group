@@ -55,7 +55,7 @@ export const aboutPage = {
     values: companyAboutProfile.statements[2].values,
   },
   heroVisual: aboutVisual("ltimindtree-hyderabad", 0, "Micro-market seating, lighting and shelving in the LTIMindtree Hyderabad portfolio."),
-  processImage: aboutVisual("technip-energies-noida", 0, "Portfolio photograph from Technip Energies, Noida Sector 16."),
+  processImage: aboutVisual("technip-energies-noida", 2, "Portfolio photograph from Technip Energies, Noida Sector 16."),
   storyVisuals: [
     aboutVisual("sequel-logistics", 4, "Workstations and storage within the Sequel Logistics portfolio workplace."),
     aboutVisual("microsoft-bengaluru", 1, "The Brews & Bakes service counter in the Microsoft Bengaluru portfolio."),

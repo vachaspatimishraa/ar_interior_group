@@ -55,3 +55,8 @@ next-env.d.ts
 *.blend1
 /tmp/
 /package-lock.wsl-backup.json
+
+# Keep planning notes local; publish only the root repository README.
+**/*.md
+!/README.md
+/.opencode/

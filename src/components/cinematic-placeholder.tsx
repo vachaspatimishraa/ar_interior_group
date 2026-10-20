@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import { ContactEnquiryLink } from "@/components/contact-enquiry-link";
 import { useEffect, useRef, useState } from "react";
 import { homepage, homepageHeroStages } from "@/data/homepage";
@@ -32,6 +33,18 @@ export function CinematicPlaceholder() {
   const [staticMode, setStaticMode] = useState(true);
   const [stage, setStage] = useState<string>(homepageHeroStages[0].label);
   const [readyMode, setReadyMode] = useState<SequenceMode | null>(null);
+
+  function skipAnimation(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    const target = document.getElementById("homepage-content");
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+    target.focus({ preventScroll: true });
+    if (window.location.hash !== "#homepage-content") {
+      window.history.pushState(null, "", "#homepage-content");
+    }
+  }
 
   useEffect(() => {
     const viewport = window.matchMedia("(max-width: 767px)");
@@ -237,12 +250,12 @@ export function CinematicPlaceholder() {
             <br />
             <em>{homepage.hero.emphasis}</em>
           </h1>
-          <p className={styles.stage} aria-live="off">{staticMode ? "Conceptual design visualization" : stage}</p>
+          <p key={stage} className={styles.stage} aria-live="off">{staticMode ? "Conceptual design visualization" : stage}</p>
           <div className={styles.actions}>
             <Link className={styles.primaryAction} href={homepage.hero.projects.href}>{homepage.hero.projects.label} <span aria-hidden="true">↗</span></Link>
             <ContactEnquiryLink className={styles.secondaryAction}>{homepage.hero.contact.label} <span aria-hidden="true">↗</span></ContactEnquiryLink>
           </div>
-          <a href="#homepage-content" className={styles.skip}>Skip animation ↓</a>
+          <a href="#homepage-content" className={styles.skip} onClick={skipAnimation}>Skip animation ↓</a>
           <p className={styles.disclosure} id="cinematic-disclosure">
             {homepage.hero.disclosure}
           </p>

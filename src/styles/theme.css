@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --theme-page: #f7f5f0;
+  --theme-page: #ffffff;
   --theme-ink: #1c1c1c;
   --theme-gold: #c49a52;
   --theme-gold-ink: #6e551f;
-  --theme-surface-muted: #eeeae2;
-  --theme-image-surface: #e7e3dc;
+  --theme-surface-muted: #f0f1f2;
+  --theme-image-surface: #e3e5e7;
   --theme-logo-surface: #ffffff;
-  --theme-text-muted: #696866;
-  --theme-text-on-dark-muted: #b8b5ae;
-  --theme-error: #f2b8b5;
+  --theme-text-muted: #62676c;
+  --theme-text-on-dark-muted: #c1c4c7;
+  --theme-error: #f1b8b5;
   --theme-error-on-light: #8b2e2b;
   --theme-border: color-mix(in srgb, var(--theme-ink) 14%, transparent);
   --theme-border-strong: color-mix(in srgb, var(--theme-ink) 35%, transparent);
@@ -49,7 +49,29 @@
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --theme-marquee-duration: 48s;
   --theme-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --theme-shadow-soft: 0 18px 45px color-mix(in srgb, var(--theme-ink) 9%, transparent);
+  --theme-shadow-soft: 0 24px 70px color-mix(in srgb, var(--theme-ink) 10%, transparent);
+  --theme-surface: #ffffff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-page: #211d19;
+  --theme-ink: #fff8ee;
+  --theme-gold: #d8ad65;
+  --theme-gold-ink: #e6c47f;
+  --theme-surface: #2b2520;
+  --theme-surface-muted: #302a24;
+  --theme-image-surface: #40372e;
+  --theme-logo-surface: #fffdf9;
+  --theme-text-muted: #d5c6b5;
+  --theme-text-on-dark-muted: #d5c6b5;
+  --theme-border: color-mix(in srgb, var(--theme-page) 20%, transparent);
+  --theme-border-strong: color-mix(in srgb, var(--theme-page) 38%, transparent);
+  --theme-border-on-dark: color-mix(in srgb, var(--theme-page) 28%, transparent);
+  --theme-overlay: color-mix(in srgb, #000 68%, transparent);
+  --theme-error: #f3b2aa;
+  --theme-error-on-light: #ffb9ad;
+  --theme-shadow-soft: 0 24px 70px color-mix(in srgb, #000 32%, transparent);
 }
 
 @theme inline {

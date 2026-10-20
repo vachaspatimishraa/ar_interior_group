@@ -6,8 +6,8 @@ import { PreviewImagePreloader } from "@/components/preview-image-preloader";
 import { usePreviewSelection } from "@/lib/motion/use-preview-selection";
 
 const stages = [
-  { id: "01", title: "Planning & preparation", body: "Space planning and design-build are among AR Interior Group's stated service areas.", name: "Tata Electronics", path: "/projects/tata-electronics-tamil-nadu", image: "/projects/tata-electronics-tamil-nadu/p14-img323-thumb.webp", alt: "Tata Electronics Tamil Nadu project, documented before view" },
-  { id: "02", title: "Interior execution", body: "Project management and execution are among AR Interior Group's stated service areas.", name: "JCB Jaipur", path: "/projects/jcb-jaipur", image: "/projects/jcb-jaipur/p36-img571-thumb.webp", alt: "JCB Jaipur project, documented before view" },
+  { id: "01", title: "Planning & preparation", body: "Space planning and design-build are among AR Interior Group's stated service areas.", name: "Tata Electronics", path: "/projects/tata-electronics-tamil-nadu", image: "/projects/tata-electronics-tamil-nadu/p14-img327-thumb.webp", alt: "Tata Electronics Tamil Nadu project, documented finished view" },
+  { id: "02", title: "Interior execution", body: "Project management and execution are among AR Interior Group's stated service areas.", name: "JCB Jaipur", path: "/projects/jcb-jaipur", image: "/projects/jcb-jaipur/p36-img575-thumb.webp", alt: "JCB Jaipur project, documented finished view" },
   { id: "03", title: "Finishing & delivery", body: "A completed workplace amenity illustrates the range of spaces in the portfolio.", name: "Microsoft · Brews & Bakes", path: "/projects/microsoft-bengaluru", image: "/projects/microsoft-bengaluru/p16-img353-thumb.webp", alt: "Microsoft Bengaluru Brews and Bakes workplace amenity counter" },
 ];
 

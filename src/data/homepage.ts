@@ -13,7 +13,7 @@ export const homepage = {
     title: "About Us",
     description: "Founded in 2019, A R Interior Group provides turnkey fit-out solutions nationwide. The team brings expertise in project management and execution, taking projects from planning through completion.",
     action: { label: "About Us", href: "/about" },
-    image: { slug: "medanta-lucknow", index: 0 },
+    image: { slug: "ltimindtree-hyderabad", index: 0 },
   },
   services: {
     eyebrow: "Services & capabilities",
@@ -48,7 +48,7 @@ export const homepage = {
   contact: {
     title: "Start a Conversation",
     action: { label: "Discuss Your Space", href: "/contact#enquiry-form" },
-    image: { slug: "medanta-lucknow", index: 1 },
+    image: { slug: "tata-electronics-tamil-nadu", index: 1 },
   },
 } as const;
 

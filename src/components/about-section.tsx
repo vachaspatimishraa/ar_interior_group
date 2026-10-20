@@ -3,8 +3,8 @@ import { companyAboutProfile, cqetPrinciples } from "@/data/company-profile";
 import { aboutVisual } from "@/data/about-page";
 import { ImageReveal, RevealItem, SectionReveal, StaggerGroup } from "@/lib/motion/reveal-attributes";
 
-const aboutHeroImage = aboutVisual("medanta-lucknow", 0, "Medanta Super Speciality Hospital, Lucknow");
-const teamVisual = aboutVisual("technip-energies-noida", 0, "Technip Energies workplace interior in Noida");
+const aboutHeroImage = aboutVisual("ltimindtree-hyderabad", 0, "Micro-market seating, lighting and shelving in the LTIMindtree Hyderabad portfolio.");
+const teamVisual = aboutVisual("technip-energies-noida", 2, "Portfolio photograph from Technip Energies, Noida Sector 16.");
 
 export function AboutSection() {
   return (
@@ -131,7 +131,7 @@ export function AboutSection() {
               <p className="eyebrow text-gold-ink">Our Team · Our Strength</p>
               <h3 className="font-display text-3xl sm:text-4xl text-ink">People & Technical Capabilities</h3>
             </div>
-            <p className="text-xs font-mono text-gold-ink uppercase font-semibold">100–200+ Skilled Execution Workforce</p>
+            <p className="text-xs font-mono text-gold-ink uppercase font-semibold">Design · Planning · Site Execution</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] items-center">

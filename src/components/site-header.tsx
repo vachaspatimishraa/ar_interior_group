@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ContactEnquiryLink } from "@/components/contact-enquiry-link";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteBrand } from "@/components/site-brand";
 
 import { verifiedOngoingProjects } from "@/components/ongoing-projects-section";
@@ -16,12 +17,12 @@ const navigation: NavItem[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
-  { id: "clients", label: "Clients" },
   { id: "projects", label: "Projects" },
+  { id: "clients", label: "Clients" },
   ...(verifiedOngoingProjects.length > 0
     ? [{ id: "ongoing-projects", label: "Ongoing Projects" }]
     : []),
-  { id: "offices", label: "Offices" },
+  { id: "presence", label: "Presence" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -29,9 +30,26 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    return window.localStorage.getItem("ar-theme") === "dark" ? "dark" : "light";
+  });
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((current) => {
+      const nextTheme = current === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = nextTheme;
+      window.localStorage.setItem("ar-theme", nextTheme);
+      return nextTheme;
+    });
+  }
 
   // Track scroll position to adapt header background from cinematic hero to ivory sticky header
   useEffect(() => {
@@ -75,12 +93,23 @@ export function SiteHeader() {
     return isHome ? `#${id}` : `/#${id}`;
   }
 
+  function isActiveItem(id: string) {
+    if (isHome) return activeSection === id;
+    return pathname === `/${id}` || pathname.startsWith(`/${id}/`);
+  }
+
+  function restoreMenuFocus() {
+    if (!isOpen) return;
+    window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+  }
+
   function handleAnchorClick(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
     if (isHome) {
       const target = document.getElementById(id);
       if (target) {
         event.preventDefault();
         setIsOpen(false);
+        restoreMenuFocus();
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
         if (window.location.hash !== `#${id}`) {
@@ -90,6 +119,7 @@ export function SiteHeader() {
       }
     } else {
       setIsOpen(false);
+      restoreMenuFocus();
     }
   }
 
@@ -113,12 +143,12 @@ export function SiteHeader() {
         }
       }}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12 lg:py-5">
+      <div className="site-header-shell mx-auto flex max-w-[1440px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12 lg:py-5">
         <SiteBrand variant="header" />
 
-        <nav className="hidden items-center gap-7 lg:gap-8 md:flex" aria-label="Primary navigation">
+        <nav className="site-header-navigation hidden items-center gap-7 lg:gap-8 xl:flex" aria-label="Primary navigation">
           {navigation.map((item) => {
-            const isActive = isHome ? activeSection === item.id : false;
+            const isActive = isActiveItem(item.id);
             return (
               <a
                 key={item.id}
@@ -128,7 +158,7 @@ export function SiteHeader() {
                     ? isTransparentHero ? "text-gold font-semibold" : "text-gold-ink font-semibold"
                     : isTransparentHero ? "text-page/80 hover:text-page" : "text-ink/80 hover:text-ink"
                 }`}
-                aria-current={isActive ? "true" : undefined}
+                aria-current={isActive ? (isHome ? "location" : "page") : undefined}
                 onClick={(e) => handleAnchorClick(e, item.id)}
               >
                 {item.label}
@@ -143,43 +173,52 @@ export function SiteHeader() {
               </a>
             );
           })}
+          <button className="theme-toggle" type="button" aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"} aria-pressed={theme === "dark"} onClick={toggleTheme}>
+            <span aria-hidden="true">{theme === "dark" ? "☼" : "☾"}</span>
+          </button>
           <ContactEnquiryLink
-            className="button button-small button-dark"
-            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, "contact")}
+            className="site-header-cta"
+            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, "footer-connect")}
           >
-            Start a conversation
+            Get in Touch <span aria-hidden="true">→</span>
           </ContactEnquiryLink>
         </nav>
 
-        <button
-          ref={menuButtonRef}
-          className={`menu-toggle relative z-10 flex h-11 w-11 items-center justify-center border rounded-full md:hidden transition-colors ${
-            isTransparentHero ? "border-page/40 text-page" : "border-ink/20 text-ink"
-          }`}
-          type="button"
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          <span className="flex w-4 flex-col gap-1.5">
-            <span className={`block h-px bg-current transition-transform ${isOpen ? "translate-y-[3px] rotate-45" : ""}`} />
-            <span className={`block h-px bg-current transition-opacity ${isOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-px bg-current transition-transform ${isOpen ? "-translate-y-[3px] -rotate-45" : ""}`} />
-          </span>
-        </button>
+        <div className="site-mobile-actions xl:hidden">
+          <button className="theme-toggle" type="button" aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"} aria-pressed={theme === "dark"} onClick={toggleTheme}>
+            <span aria-hidden="true">{theme === "dark" ? "☼" : "☾"}</span>
+          </button>
+          <button
+            ref={menuButtonRef}
+            className={`menu-toggle relative z-10 flex h-11 w-11 items-center justify-center border rounded-full transition-colors ${
+              isTransparentHero ? "border-page/40 text-page" : "border-ink/20 text-ink"
+            }`}
+            type="button"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            <span className="flex w-4 flex-col gap-1.5">
+              <span className={`block h-px bg-current transition-transform ${isOpen ? "translate-y-[3px] rotate-45" : ""}`} />
+              <span className={`block h-px bg-current transition-opacity ${isOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-px bg-current transition-transform ${isOpen ? "-translate-y-[3px] -rotate-45" : ""}`} />
+            </span>
+          </button>
+        </div>
       </div>
 
+      {isOpen && <button className="site-mobile-backdrop xl:hidden" type="button" aria-label="Close menu" onClick={() => setIsOpen(false)} />}
       <div
         id="mobile-navigation"
-        className={`border-b border-ink/10 bg-ivory px-6 transition-[max-height,opacity] duration-300 md:hidden ${
-          isOpen ? "max-h-[32rem] opacity-100 shadow-xl" : "max-h-0 overflow-hidden opacity-0"
+        className={`site-mobile-panel xl:hidden ${
+          isOpen ? "site-mobile-panel-open" : "site-mobile-panel-closed"
         }`}
         inert={!isOpen}
       >
         <nav className="flex flex-col pb-7 pt-2" aria-label="Mobile navigation">
           {navigation.map((item) => {
-            const isActive = isHome ? activeSection === item.id : false;
+            const isActive = isActiveItem(item.id);
             return (
               <a
                 key={item.id}
@@ -187,7 +226,7 @@ export function SiteHeader() {
                   isActive ? "text-gold-ink font-semibold" : "text-ink/80 hover:text-ink"
                 }`}
                 href={getHref(item.id)}
-                aria-current={isActive ? "true" : undefined}
+                aria-current={isActive ? (isHome ? "location" : "page") : undefined}
                 onClick={(e) => handleAnchorClick(e, item.id)}
               >
                 <span>{item.label}</span>
@@ -196,13 +235,14 @@ export function SiteHeader() {
             );
           })}
           <ContactEnquiryLink
-            className="button button-dark mt-4 w-full"
-            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, "contact")}
+            className="site-header-cta site-header-cta-mobile mt-4 w-full"
+            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, "footer-connect")}
           >
-            Start a conversation
+            Get in Touch <span aria-hidden="true">→</span>
           </ContactEnquiryLink>
         </nav>
       </div>
+      <ScrollProgress />
     </header>
   );
 }

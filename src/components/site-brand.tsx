@@ -18,7 +18,10 @@ export function SiteBrand({ variant = "header" }: SiteBrandProps) {
         loading={variant === "header" ? "eager" : "lazy"}
         className="site-brand-mark"
       />
-      <span className="site-brand-name">AR Interior <span>Group</span></span>
+      <span className="site-brand-copy">
+        <span className="site-brand-name">AR Interior <span>Group</span></span>
+        <span className="site-brand-subtitle">Space planning · Design &amp; Build</span>
+      </span>
     </Link>
   );
 }

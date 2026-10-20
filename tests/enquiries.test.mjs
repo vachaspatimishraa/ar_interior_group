@@ -450,17 +450,22 @@ test("service visual references resolve locally and are not third-party stock as
   assert.ok(overviewVisuals.every(Boolean), "every service overview has a visual mapping");
   assert.equal(new Set(overviewVisuals.map(({ path }) => path)).size, overviewSlugs.length, "each service uses a distinct source visual");
   for (const visual of overviewVisuals) {
-    assert.ok(visual.path.startsWith("public/service-profile/"));
-    assert.match(visual.label, /illustration/i, "profile page imagery is identified as service illustration, not completed-project evidence");
+    if (visual.path.startsWith("public/service-profile/")) {
+      assert.match(visual.label, /illustration/i, "profile page imagery is identified as service illustration");
+    } else {
+      assert.ok(visual.path.startsWith("public/projects/"));
+      assert.match(visual.label, /portfolio/i, "project imagery is identified as portfolio context");
+    }
   }
-  const pageSource = readFileSync(resolve("src/app/page.tsx"), "utf8");
+  const pageSource = readFileSync(resolve("src/components/ar-portfolio-page.tsx"), "utf8");
   assert.doesNotMatch(pageSource, /A considered comparison|Comparison imagery · review in progress|We are reviewing the source images/);
-  assert.match(pageSource, /<ContactSection/);
-  assert.match(pageSource, /<AboutSection/);
-  assert.match(pageSource, /<ServicesSection/);
-  assert.match(pageSource, /<ClientsSection/);
-  assert.match(pageSource, /<ProjectsSection/);
-  assert.match(pageSource, /<OfficesSection/);
+  assert.match(pageSource, /id="about"/);
+  assert.match(pageSource, /id="services"/);
+  assert.match(pageSource, /id="clients"/);
+  assert.match(pageSource, /id="projects"/);
+  assert.match(pageSource, /id="presence"/);
+  assert.match(pageSource, /id="contact"/);
+  assert.match(pageSource, /<ContactForm/);
   const contactCta = readFileSync(resolve("src/components/homepage-contact-cta.tsx"), "utf8");
   assert.match(contactCta, /ContactEnquiryLink/);
   assert.equal(homepage.contact.action.href, "/contact#enquiry-form");

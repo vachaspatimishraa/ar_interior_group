@@ -42,6 +42,22 @@ export function SiteHeader() {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
+  useEffect(() => {
+    document.body.classList.toggle("mobile-menu-open", isOpen);
+    return () => document.body.classList.remove("mobile-menu-open");
+  }, [isOpen]);
+
+  useEffect(() => {
+    const landscapeQuery = window.matchMedia("(orientation: landscape)");
+    const closeMenuForLandscape = () => {
+      if (landscapeQuery.matches) setIsOpen(false);
+    };
+
+    closeMenuForLandscape();
+    landscapeQuery.addEventListener("change", closeMenuForLandscape);
+    return () => landscapeQuery.removeEventListener("change", closeMenuForLandscape);
+  }, []);
+
   function toggleTheme() {
     setTheme((current) => {
       const nextTheme = current === "dark" ? "light" : "dark";
@@ -123,16 +139,16 @@ export function SiteHeader() {
     }
   }
 
-  // Visual header theme: when at the top of home over the cinematic video hero, use transparent gradient.
-  // When scrolled down into ivory content or on secondary pages, use ivory with charcoal text.
-  const isTransparentHero = isHome && !isScrolled;
+  // The current homepage hero is light, so its header uses the same readable
+  // surface as the rest of the site rather than a dark cinematic overlay.
+  const isTransparentHero = false;
 
   return (
     <header
       className={`site-header sticky top-0 inset-x-0 z-50 transition-all duration-300 ${
         isTransparentHero
           ? "bg-gradient-to-b from-ink/75 via-ink/30 to-transparent text-page"
-          : "bg-ivory/95 backdrop-blur-md border-b border-ink/10 text-ink shadow-[0_2px_12px_rgba(28,28,28,0.04)]"
+          : "bg-ivory/95 border-b border-ink/10 text-ink shadow-[0_2px_12px_rgba(28,28,28,0.04)]"
       }`}
       data-home={isTransparentHero ? "true" : undefined}
       data-scrolled={isScrolled ? "true" : undefined}
